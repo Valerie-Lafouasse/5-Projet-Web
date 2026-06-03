@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="membres de la promotion mai 2026 ENI - Ecole Informatique DWWM">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Préférences-ENI Promo EDWM2605FT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/286081d085.js" crossorigin="anonymous"></script>
+</head>
+
+
+<body>
+    <header>
+        <!--Accessibilité: penser fil ariane: aria-label="breadcrumb"-->
+       
+            <div class="logo">
+            <img src="images/logo-eni.png" alt="logo de l'ENI" >
+            </div>
+
+            <h1>Promo EDWM2605FT</h1>
+<!--Bouton burger à revoir-->
+            <div class="burger">☰</div>
+            <nav> 
+                 <div class="menu" alt="menu">
+                
+                 <button class="btn"><a href="index.html">Accueil</a></button>
+                 <button class="btn"><a href="preferences.html">Préférences</a></button>
+                 <button class="btn"><a href="carte.html">Carte</a></button>
+                 <button class="btn"><a href="informations.html">Informations</a></button>
+                
+                 </div>
+            </nav>
+
+                                  
+    </header>
+
+    <main class="preferences"> 
+        <h1>Préférences du site</h1>
+        
+        <div class="theme">
+            <label>Thème du site</label>
+            <select name="theme" id="theme">
+                <option value="clair" selected>Clair</option>
+                <option value="sombre">Sombre</option>
+            </select>
+        </div>
+
+        <div class="affichage">
+            <label>Format d'affichage de la liste des apprenants</label>
+            <div class="choix">
+                <div>
+                    <input type="radio" name="affichage" id="affichage-liste" value="liste" checked>
+                    <label for="affichage">Liste</label>
+                </div>
+
+                <div>
+                    <input type="radio" name="affichage" id="affichage-carte" value="carte">
+                    <label for="affichage">Carte</label>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <button class="btn"><a href="index.html">Retour à la page d'accueil</a></button>
+        <input type="submit" value="Enregistrer" name="btn-enregistrer" class="btn"> 
+    </footer>
+    
+</body>
+<script src="script.js"></script>
+</html>

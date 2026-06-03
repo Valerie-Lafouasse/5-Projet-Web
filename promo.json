@@ -1,0 +1,40 @@
+{
+  "apprenants" : [
+    {
+      "id" : 1,
+      "nom" : "ALFONSO ",
+      "prenom" : "Guillaume",
+      "ville" : "Rennes",
+      "avatar" : "image.png",
+      "anecdotes" : "Allergique au KAHOOT (ou plus sérieusement Ancien cracheur de feu)",
+      "coordonnees": {
+        "latitude" : "43.266670",
+        "longitude" : "-0.183330"
+      }
+    },
+    {
+      "id" : 2,
+      "nom" : "BEOUCHE ",
+      "prenom" : "Naïma",
+      "ville": "Nantes",
+      "avatar" : "",
+      "anecdotes" : "",
+      "coordonnees": {
+        "latitude" : "47.2258527",
+        "longitude" : "-1.6178441"
+      }
+    },
+    {
+      "id" : 1,
+      "nom" : "ALFONSO ",
+      "prenom" : "Guillaume",
+      "ville" : "Rennes",
+      "avatar" : "image.png",
+      "anecdotes" : "Allergique au KAHOOT (ou plus sérieusement Ancien cracheur de feu)",
+      "coordonnees": {
+        "latitude" : "43.266670",
+        "longitude" : "-0.183330"
+      }
+    }
+  ]
+}
