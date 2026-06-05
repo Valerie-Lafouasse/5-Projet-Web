@@ -9,6 +9,7 @@
     <title>Préférences-ENI Promo EDWM2605FT</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/286081d085.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
 </head>
 
 
@@ -21,15 +22,15 @@
             </div>
 
             <h1>Promo EDWM2605FT</h1>
-<!--Bouton burger à revoir-->
-            <div class="burger">☰</div>
+<!--Bouton burger à revoir
+            <div class="burger">☰</div>-->
             <nav> 
-                 <div class="menu" alt="menu">
+                 <div class="menu">
                 
-                 <button class="btn"><a href="index.html">Accueil</a></button>
-                 <button class="btn"><a href="preferences.html">Préférences</a></button>
-                 <button class="btn"><a href="carte.html">Carte</a></button>
-                 <button class="btn"><a href="informations.html">Informations</a></button>
+                <a href="index.html" class="btn">Accueil</a>
+                <a href="preferences.html" class="btn">Préférences</a>
+                <a href="carte.html" class="btn">Carte</a>
+                <a href="informations.html" class="btn">Informations</a>
                 
                  </div>
             </nav>
@@ -53,12 +54,12 @@
             <div class="choix">
                 <div>
                     <input type="radio" name="affichage" id="affichage-liste" value="liste" checked>
-                    <label for="affichage">Liste</label>
+                    <label for="affichage-liste">Liste</label>
                 </div>
 
                 <div>
                     <input type="radio" name="affichage" id="affichage-carte" value="carte">
-                    <label for="affichage">Carte</label>
+                    <label for="affichage-carte">Carte</label>
                 </div>
             </div>
         </div>
@@ -66,10 +67,11 @@
     </main>
 
     <footer>
-        <button class="btn"><a href="index.html">Retour à la page d'accueil</a></button>
-        <input type="submit" value="Enregistrer" name="btn-enregistrer" class="btn"> 
+         <a href="index.html">Retour à la page d'accueil</a>
+        <input type="submit" value="Enregistrer" name="btn-enregistrer" id="btn-enregistrer" class="btn">
+        <p id="message-confirmation"></p> 
     </footer>
     
 </body>
-<script src="script.js"></script>
+
 </html>
