@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="membres de la promotion mai 2026 ENI - Ecole Informatique DWWM">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <title>Carte - Promo EDWM2605FT</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/286081d085.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+<script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+              
+            <div class="logo">
+            <img src="images/logo-eni.png" alt="logo de l'ENI" >
+            </div>
+
+            <h1>Promo EDWM2605FT</h1>
+
+             <!--<div class="burger">☰</div>-->
+            <nav> 
+                 <div class="menu">
+                
+                <a href="index.html" class="btn">Accueil</a>
+                <a href="preferences.html" class="btn">Préférences</a>
+                <a href="carte.html" class="btn">Carte</a>
+                <a href="informations.html" class="btn">Informations</a>
+                
+                 </div>
+                 <div class="affichage">
+                <label>Type d'affichage:</label>
+                    <input type="radio" name="affichage" id="affichage-liste" value="liste" checked>
+                    <label for="affichage-liste">Liste</label>
+                    <input type="radio" name="affichage" id="affichage-carte" value="carte">
+                    <label for="affichage-carte">Carte</label>
+               </div>
+            </nav>
+    
+    </header>
+
+    <main class="carte">
+    <div id="carte-leaflet"></div>
+</main>
+</body>
+</html>
