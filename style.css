@@ -14,7 +14,7 @@ header {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    background-color: #b3f3f7;
+    background-color: #cdeef1;
     border: aliceblue 1px solid;
     
 }
@@ -42,13 +42,9 @@ h1, h2 {
     border: white solid 2px;
     display: flex;
     flex-direction: column;/* mobile : boutons empilés */
-    
     gap: 0.75rem;
     width: 100%;
 }
-   
-    
-
 
 /*
 .burger {
@@ -63,15 +59,27 @@ h1, h2 {
 
 .btn {
     background-color:rgb(135, 198, 237) ;
+    color: black;
     box-shadow: 2px 2px 0px darkblue;
-    border-radius: 8%;
-   width: auto;
+    border-radius: 8px;
+    width: auto;
     max-width: 300px;
     padding: 12px 20px;
     text-align: center;
     font-weight: 600;
-
 }
+
+.btn:hover {
+    background-color: rgb(100, 170, 220);
+    transform: translateY(-2px);
+    transition: 0.2s;
+}
+
+.lien-details {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 /*desktop*/
 @media screen and (min-width: 768px) {
     header {
@@ -99,9 +107,7 @@ h1, h2 {
 
 body {
     background-color: lightblue;
-   
     font-family: 'Roboto', sans-serif;
-
 }
 
 main {
@@ -146,8 +152,12 @@ thead {
 
 /* Pour cibler les lignes impaires d'un tableau HTML : 1, 3, 5, etc.*/
 tbody tr:nth-child(odd) {
-    background-color: rgb(2, 2, 147, 0.2); 
+    background-color: rgba(5, 204, 204, 0.15); 
 }
+tbody tr:hover {
+    background-color: rgba(5, 228, 228, 0.3);
+}
+
 .scroller {
   width: 100%; /*pour mobile*/
   max-height: 750px; 
@@ -160,11 +170,10 @@ tbody tr:nth-child(odd) {
   @media screen and (min-width: 768px){
     .scroller {
         width: 50%; /*pour desktop*/
-    }
-    
+    } 
   }
 
-/*deplacement de over flow de .scroller à tbod pour coller la scrollbar au tableau*/
+/*deplacement de over flow de .scroller à tbody pour coller la scrollbar au tableau*/
 tbody {
     display: block;
     overflow-y: scroll;
@@ -192,7 +201,8 @@ th:nth-child(4), td:nth-child(4) { width: 25%; }
 .description, .liens-utiles {
 
     border: 1px solid black;
-    border-radius: 5%;
+    border-radius: 8px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.15);
     margin: 10px;
     padding: 10px;
     width: 35%;
@@ -211,6 +221,7 @@ th:nth-child(4), td:nth-child(4) { width: 25%; }
     margin-left: auto;
     margin-right: auto;
 }
+
 @media screen and (min-width: 768px) {
     .preferences {
         width: 50%; /* desktop */
@@ -223,9 +234,7 @@ th:nth-child(4), td:nth-child(4) { width: 25%; }
     width: 100%;
 }
 
-footer {
-    border: 1px solid aliceblue ;
-    
+footer {  
     margin-top: 2vw;
     width: 100%; /*pour mobile*/
     margin-left: auto;
@@ -236,24 +245,40 @@ footer {
 @media screen and (min-width: 768px){
     footer {
         width: 50%; /* pour desktop*/
-    }
-    
+    } 
 }
+
+
 /* quand body a la classe sombre*/
 body.sombre {
   background-color: #1a1a1a;
-  color: white;
-}
-body.sombre p{
+  color: aliceblue; 
+  .box a , .box p {
+       color: aliceblue;
+    }
+  main.affichage{
+    color:black;
+   }
+  header nav .affichage{
+    color: black;
+  }
+   section.description, section.liens-utiles{
+    border-color: aliceblue;
+    } 
+   footer a, .btn {
     color: aliceblue;
-}
-body.sombre a{
+   }  
+   .btn {
+    background-color: #2a4a5e;
+   }  
+    #btn-enregistrer {
+    background-color: #05456d;
+   }
+   .lien-details {
     color: aliceblue;
+   }
+   
 }
-  body.sombre h1{
-    color: aliceblue;
-}
-
 /* changer l'affichage en mode carte*/
 /*Masquer les cartes par défaut */
 #vue-carte {
@@ -272,6 +297,11 @@ border-radius: 5%;
 padding: 0.5rem;
 margin: 0.5rem;
 background-color: rgb(5, 204, 204);
+box-shadow: 2px 2px 6px rgba(0,0,0,0.2);
+transition: transform 0.2s;
+}
+.scroller.carte .vignette:hover {
+    transform: translateY(-4px);
 }
 .scroller.carte {
     width: 100%;
@@ -283,3 +313,9 @@ background-color: rgb(5, 204, 204);
     display: none;
 }
 
+/* Page carte*/
+#carte-leaflet {
+    height: 500px;
+    width: 100%;
+    margin-top: 2rem;
+}
