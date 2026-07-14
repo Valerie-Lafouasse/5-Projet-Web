@@ -72,40 +72,66 @@ if (btnEnregistrer) {
         document.getElementById('message-confirmation').innerText = 'Vos préférences ont bien été enregistrées !'
     })
 }
-    
-
 
 /* récupérer les données de promo.json*/
 
 fetch ('promo.json')
 .then(response => response.json())
-.then(data => afficherData(data.apprenants))
+.then(data => {
+    if (document.getElementById('tbody-promo')) {
+        afficherData(data.apprenants)
+    }
+})
 
 function afficherData (data){
     /* cibler tbody  avant d'écrire dedans*/
    const tbody = document.getElementById('tbody-promo')
    const vueCarte = document.getElementById('vue-carte')
     
-/* boucler sur data avec foreach et dans la boucle créer la ligne et l'injecter dans html*/
+   /* boucler sur data avec foreach et dans la boucle créer la ligne et l'injecter dans html*/
    data.forEach(personne => {
         const ligne = `<tr>
-    <td>${personne.nom}</td>
-    <td>${personne.prenom}</td>
-    <td>${personne.ville}</td>
-    <td><a href="">Détails</a></td>
-    </tr>`
+        <td>${personne.nom}</td>
+        <td>${personne.prenom}</td>
+        <td>${personne.ville}</td>
+        <td><a href="#" class="lien-details" title="Détail apprenant : à venir">Détails</a></td>
+        </tr>`
         tbody.innerHTML += ligne
-     /*Injecter ligne et carte en même temps dans le for each: */
+        /*Injecter ligne et carte en même temps dans le for each: */
         const vignette = `<div class="vignette">
-     <h2>${personne.nom} ${personne.prenom}</h2>
-     <p>${personne.ville}</p>
-     <a href="">Détails</a>
-     </div>`
+        <h2>${personne.nom} ${personne.prenom}</h2>
+        <p>${personne.ville}</p>
+        <a href="#" class="lien-details" title="Détail apprenant : à venir">Détails</a>
+        </div>`
         vueCarte.innerHTML += vignette   
-}) 
+    }) 
 }
 
+/* Affichage carte Leaflet - page carte.html uniquement */
 
+const carteLeaflet = document.getElementById('carte-leaflet')
+
+if (carteLeaflet) {
+    const map = L.map('carte-leaflet').setView([46.6, 2.5], 6)
+
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map)
+
+    fetch('promo.json')
+        .then(response => response.json())
+        .then(data => {
+            data.apprenants.forEach(personne => {
+                const lat = personne.coordonnees.latitude
+                const lng = personne.coordonnees.longitude
+
+                L.marker([lat, lng])
+                    .addTo(map)
+                    .bindPopup(`${personne.prenom} ${personne.nom} - ${personne.ville}`)
+            })
+        })
+}
 
 /* menu burger
 const burger = document.querySelector(".burger")
